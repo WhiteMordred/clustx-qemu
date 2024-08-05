@@ -1,34 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-bs-theme="dark">
 
-    <head>
-        [1]
-        <meta http-equiv="Cache-Control" content="no-cache" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" type="text/css" href="/css/style.css" />
-        <link rel="icon" href="/img/favicon.svg" type="image/x-icon">
-        [2]
-    </head>
+<head>
+	<meta charset="utf-8">
+	<title>Clust-X | UEFI QEMU</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
 
-    <body>
-        <div id="page">
-            <div id="content">
-                <svg id="spinner" width="64" height="64" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <rect class="spinner_LWk7" fill="#0c8aeb" x="1.5" y="1.5" rx="1" width="9" height="9"/>
-                    <rect class="spinner_yOMU" fill="#0c8aeb" x="13.5" y="1.5" rx="1" width="9" height="9"/>
-                    <rect class="spinner_KS4S" fill="#0c8aeb" x="13.5" y="13.5" rx="1" width="9" height="9"/>
-                    <rect class="spinner_zVee" fill="#0c8aeb" x="1.5" y="13.5" rx="1" width="9" height="9"/>
-                </svg>
-                <h1 id="info">[3]</h1>
-            </div>
-            <div id="empty">
-            </div>
-            <footer id="footer">
-                [4]<br />
-                [5]
-            </footer>
-        </div>
-        <script type="text/javascript" src="/js/script.js"></script>
-    </body>
+	<!-- ================== BEGIN core-css ================== -->
+	<link href="assets/css/vendor.min.css" rel="stylesheet">
+	<link href="assets/css/app.min.css" rel="stylesheet">
+	<link href="assets/css/custom.css" rel="stylesheet">
+	<!-- ================== END core-css ================== -->
+	[2]
+</head>
+
+<body class='pace-top'>
+	<!-- BEGIN #app -->
+	<div id="app" class="app app-full-height app-without-header">
+		<!-- BEGIN error -->
+		<div class="error-page">
+			<!-- BEGIN error-page-content -->
+			<div class="error-page-content">
+				<div class="card mb-5 mx-auto" style="max-width: 600px;">
+					<div class="card-body">
+						<div class="card">
+							<div class="error-code">Clust-X</div>
+							<div class="card-arrow">
+								<div class="card-arrow-top-left"></div>
+								<div class="card-arrow-top-right"></div>
+								<div class="card-arrow-bottom-left"></div>
+								<div class="card-arrow-bottom-right"></div>
+							</div>
+						</div>
+					</div>
+					<div class="card-arrow">
+						<div class="card-arrow-top-left"></div>
+						<div class="card-arrow-top-right"></div>
+						<div class="card-arrow-bottom-left"></div>
+						<div class="card-arrow-bottom-right"></div>
+					</div>
+				</div>
+				<div>
+					<h3 id="info">[3]</h3>
+				</div>
+				<div>
+					<button type="button" class="btn btn-outline-theme me-2" data-bs-toggle="modal" data-bs-target="#modalCoverExample">Play Game</button>
+				</div>
+                <div>
+                    <div style="height: 30px;">
+
+                    </div>
+                    <div id="footer">
+                        [4]<br />
+                        [5]
+                    </div>
+                </div>
+			</div>
+			<div class="modal modal-cover fade" id="modalCoverExample">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h3 class="modal-title">Game Play</h3>
+							<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+						</div>
+						<div class="modal-body">
+							<div class="card mb-5 mx-auto" style="max-width: 600px;">
+								<div class="card-header">
+									<div class="row">
+										<div class="col-8">
+											<div class="d-flex flew-row">
+												<div class="p-2">Score: <span id="score">0</span></div>
+												<div class="p-2">Ammo: <span id="ammo">500</span></div>
+												<div class="p-2">Level: <span id="level">1</span></div>
+											</div>
+										</div>
+										<div class="col-4 d-flex flex-row-reverse">
+											<button id="restartButton" class="btn btn-outline-theme">Restart Game</button>
+										</div>
+			
+									</div>
+								</div>
+								<div class="card-body">
+									<div class="">
+										<canvas id="gameCanvas" width="550" height="500"></canvas>
+									</div>
+								</div>
+								<div class="card-footer">
+									<h3>Rules:</h3>
+									<div class=" d-flex flex-row">
+										<p class="border-end p-2">Yellow bricks must be absorbed to gain ammo.</p>
+										<p class="p-2">Orange bricks with the logo allow you to advance to the next level and are worth 1000
+											points.</p>
+									</div>
+								</div>
+			
+								<div class="card-arrow">
+									<div class="card-arrow-top-left"></div>
+									<div class="card-arrow-top-right"></div>
+									<div class="card-arrow-bottom-left"></div>
+									<div class="card-arrow-bottom-right"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END #app -->
+	</div>
+		<!-- ================== BEGIN core-js ================== -->
+		<script src="assets/js/vendor.min.js"></script>
+		<script src="assets/js/app.min.js"></script>
+		<script src="assets/js/spaceinvaders.js"></script>
+        <script src="assets/js/script.js"></script>
+		<!-- ================== END core-js ================== -->
+
+
+</body>
 
 </html>
